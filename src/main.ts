@@ -1,23 +1,28 @@
-const numbers = [1, 2, 3, 4, 5];
+type Student = {
 
-const doubledNumbers = numbers.map((num) => num * 2);
+    firstName:string
+    lastName:string
+    age:number
+    grades: Note[];
 
-console.log(doubledNumbers);
+}
 
-const words = ["Hello", "World", "JavaScript", "TypeScript", "Programming"];
+type Note = 1 | 2 | 3 | 4 | 5 | 6 | "A" | "B" | "C" | "D" | "F"
 
-const filteredWords = words.filter((word) => word.length > 5);
 
-console.log(filteredWords);
+const student: Student = {
+    firstName: "Anton",
+    lastName: "Meier",
+    age: 17,
+    grades: ["A",2,"F",3,1,"B",2,5],
+};
 
-const numbers1 = [1, 2, 3, 4, 5];
+function studentAusgeben(student: Student){
 
-const sum = numbers1.reduce((accumulator, currentValue) => accumulator + currentValue);
+    const {firstName, lastName, age, grades }    = student;
+    console.log(`${firstName} ${lastName} (${age})`);
+    console.log("=".repeat(30));
+    console.log("Noten:", grades.join(","));
+}
 
-console.log(sum);
-
-const numbers2 = [5, 8, 15, 3, 2];
-
-const hasNumberGreaterThanTen = numbers2.some((num) => num > 10);
-
-console.log(hasNumberGreaterThanTen);
+studentAusgeben(student);
