@@ -32,14 +32,10 @@ const studenten: Student[] = [
 ];
 
 function alleStudentenAusgeben(studenten: Student[]) {
-    studenten.forEach((student, index) => {
+    studenten.forEach((student) => {
         console.log(`${student.firstName} ${student.lastName} (${student.age})`);
         console.log("=".repeat(30));
         console.log("Noten:", student.grades.map((grade) => (grade !== undefined ? grade : "*")).join(","));
-
-        if (index !== studenten.length - 1) {
-            console.log();
-        }
     });
 }
 
