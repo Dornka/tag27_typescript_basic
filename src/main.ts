@@ -12,7 +12,7 @@ console.log(filteredWords);
 
 const numbers1 = [1, 2, 3, 4, 5];
 
-const sum = numbers1.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+const sum = numbers1.reduce((accumulator, currentValue) => accumulator + currentValue);
 
 console.log(sum);
 
